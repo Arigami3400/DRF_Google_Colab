@@ -7,44 +7,44 @@ import os
 from django.conf import settings
 
 
-model_path = os.path.join(settings.BASE_DIR, 'model_ava.pkl')
+model_path = os.path.join(settings.BASE_DIR, 'ml_models/model_ava.pkl')
 model_avocado = joblib.load(model_path)
-scaler_path = os.path.join(settings.BASE_DIR, 'scaler_ava.pkl')
+scaler_path = os.path.join(settings.BASE_DIR, 'ml_models/scaler_ava.pkl')
 scaler_avocado = joblib.load(scaler_path)
 
-model_path = os.path.join(settings.BASE_DIR, 'model_stu.pkl')
+model_path = os.path.join(settings.BASE_DIR, 'ml_models/model_stu.pkl')
 model_student = joblib.load(model_path)
-scaler_path = os.path.join(settings.BASE_DIR, 'scaler_stu.pkl')
+scaler_path = os.path.join(settings.BASE_DIR, 'ml_models/scaler_stu.pkl')
 scaler_student = joblib.load(scaler_path)
 
-model_path = os.path.join(settings.BASE_DIR, 'model_bank.pkl')
+model_path = os.path.join(settings.BASE_DIR, 'ml_models/model_bank.pkl')
 model_bank = joblib.load(model_path)
-scaler_path = os.path.join(settings.BASE_DIR, 'scaler_bank.pkl')
+scaler_path = os.path.join(settings.BASE_DIR, 'ml_models/scaler_bank.pkl')
 scaler_bank = joblib.load(scaler_path)
 
-model_path = os.path.join(settings.BASE_DIR, 'model_tita.pkl')
+model_path = os.path.join(settings.BASE_DIR, 'ml_models/model_tita.pkl')
 model_titanic = joblib.load(model_path)
-scaler_path = os.path.join(settings.BASE_DIR, 'scaler_tita.pkl')
+scaler_path = os.path.join(settings.BASE_DIR, 'ml_models/scaler_tita.pkl')
 scaler_titanic = joblib.load(scaler_path)
 
-model_path = os.path.join(settings.BASE_DIR, 'model_tele.pkl')
+model_path = os.path.join(settings.BASE_DIR, 'ml_models/model_tele.pkl')
 model_telecom = joblib.load(model_path)
-scaler_path = os.path.join(settings.BASE_DIR, 'scaler_tele.pkl')
+scaler_path = os.path.join(settings.BASE_DIR, 'ml_models/scaler_tele.pkl')
 scaler_telecom = joblib.load(scaler_path)
 
-model_path = os.path.join(settings.BASE_DIR, 'model_mash.plk')
+model_path = os.path.join(settings.BASE_DIR, 'ml_models/model_mash.plk')
 model_mash = joblib.load(model_path)
-scaler_path = os.path.join(settings.BASE_DIR, 'scaler_mash.pkl')
+scaler_path = os.path.join(settings.BASE_DIR, 'ml_models/scaler_mash.pkl')
 scaler_mash = joblib.load(scaler_path)
 
-model_path = os.path.join(settings.BASE_DIR, 'model_dia.pkl')
+model_path = os.path.join(settings.BASE_DIR, 'ml_models/model_dia.pkl')
 model_diabet = joblib.load(model_path)
-scaler_path = os.path.join(settings.BASE_DIR, 'scaler_dia.pkl')
+scaler_path = os.path.join(settings.BASE_DIR, 'ml_models/scaler_dia.pkl')
 scaler_diabet = joblib.load(scaler_path)
 
-model_path = os.path.join(settings.BASE_DIR, 'model_house.pkl')
+model_path = os.path.join(settings.BASE_DIR, 'ml_models/model_house.pkl')
 model_house = joblib.load(model_path)
-scaler_path = os.path.join(settings.BASE_DIR, 'scaler_house.pkl')
+scaler_path = os.path.join(settings.BASE_DIR, 'ml_models/scaler_house.pkl')
 scaler_house = joblib.load(scaler_path)
 
 
