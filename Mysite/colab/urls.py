@@ -14,5 +14,6 @@ urlpatterns = [
     path('predict_diabet/', PredictDiabet.as_view(), name='predict_diabet'),
     path('predict_mashrooms/', PredictMashrooms.as_view(), name='predict_mashrooms'),
     path('predict_titanic/', PredictTitanic.as_view(), name='predict_titanic'),
+    path('predict_staff/', PredictDSHremploye.as_view(), name='predict_staff')
 
 ]

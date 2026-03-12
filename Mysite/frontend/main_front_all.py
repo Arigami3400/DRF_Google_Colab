@@ -13,10 +13,11 @@ from Mysite.frontend.mash_front import check_mashrooms
 from Mysite.frontend.diabet_front import check_diabet
 from Mysite.frontend.avocado_front import check_avocado
 from Mysite.frontend.telecom_front import check_telecom
+from Mysite.frontend.staff_front import check_staff
 
 with st.sidebar:
     name = st.radio('ML models:', ['Info', 'House', 'Student', 'Titanic', 'Bank',
-                                   'Mashrooms', 'Diabet', 'Avocado', 'Telecom'])
+                                   'Mashrooms', 'Diabet', 'Avocado', 'Telecom', 'Staff'])
 
 if name =='Info':
     st.title('Welcome')
@@ -28,6 +29,7 @@ if name =='Info':
     st.text('Avocado — предсказание зрелости авокадо')
     st.text('Mushroom — классификация грибов')
     st.text('Telecom — отток клиентов телеком')
+    st.text('Staff — отток сотрудников в компании')
 
 
 elif name == 'House':
@@ -53,3 +55,6 @@ elif name == 'Avocado':
 
 elif name == 'Telecom':
     check_telecom()
+
+elif name == 'Staff':
+    check_staff()

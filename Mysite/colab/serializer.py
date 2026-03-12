@@ -111,6 +111,39 @@ class AvacadoSerializer(serializers.Serializer):
     size_cm3 = serializers.IntegerField()
 
 
+class DSHremployeSerializer(serializers.Serializer):
+    age = serializers.IntegerField()
+    business_travel = serializers.CharField(max_length=50)
+    daily_rate = serializers.IntegerField()
+    department = serializers.CharField(max_length=50)
+    distance_from_home = serializers.IntegerField()
+    education = serializers.IntegerField()
+    education_field = serializers.CharField(max_length=50)
+    environment_satisfaction = serializers.IntegerField()
+    gender = serializers.CharField(max_length=10)
+    hourly_rate = serializers.IntegerField()
+    job_involvement = serializers.IntegerField()
+    job_level = serializers.IntegerField()
+    job_role = serializers.CharField(max_length=50)
+    job_satisfaction = serializers.IntegerField()
+    marital_status = serializers.CharField(max_length=50)
+    monthly_income = serializers.IntegerField()
+    monthly_rate = serializers.IntegerField()
+    num_companies_worked = serializers.IntegerField()
+    over_time = serializers.CharField(max_length=10)
+    percent_salary_hike = serializers.IntegerField()
+    performance_rating = serializers.IntegerField()
+    relationship_satisfaction = serializers.IntegerField()
+    stockoption_level = serializers.IntegerField()
+    total_working_years = serializers.IntegerField()
+    training_times_lastyear = serializers.IntegerField()
+    work_life_balance = serializers.IntegerField()
+    years_atcompany = serializers.IntegerField()
+    years_incurrent_role = serializers.IntegerField()
+    years_since_lastpromotion = serializers.IntegerField()
+    years_with_currmanager = serializers.IntegerField()
+
+
 
 
 

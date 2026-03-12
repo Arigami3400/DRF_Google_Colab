@@ -9,5 +9,6 @@ admin.site.register(Student)
 admin.site.register(Titanic)
 admin.site.register(Diabet)
 admin.site.register(Telecom)
+admin.site.register(DSHremploye)
 
 

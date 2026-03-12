@@ -47,6 +47,10 @@ model_house = joblib.load(model_path)
 scaler_path = os.path.join(settings.BASE_DIR, 'ml_models/scaler_house.pkl')
 scaler_house = joblib.load(scaler_path)
 
+model_path = os.path.join(settings.BASE_DIR, 'ml_models/model_staff.pkl')
+model_staff = joblib.load(model_path)
+scaler_path = os.path.join(settings.BASE_DIR, 'ml_models/scaler_staff.pkl')
+scaler_staff = joblib.load(scaler_path)
 
 
 #House
@@ -119,6 +123,15 @@ person_education = ['Bachelor', 'Doctorate', 'High_School', 'Master']
 person_home = ['OTHER', 'OWN', 'RENT']
 loan_intent = ['HOMEIMPROVEMENT', 'MEDICAL', 'PERSONAL', 'VENTURE', 'EDUCATION']
 previous_loan_defaults_on_file = ['Yes']
+
+#staff
+department_list = ['Research & Development', 'Sales']
+EducationField_list = ['Life Sciences', 'Marketing', 'Medical', 'Other', 'Technical Degree']
+JobRole_list = ['Human Resources', 'Laboratory Technician', 'Manager', 'Manufacturing Director', 'Research Director', 'Research Scientist', 'Sales Executive', 'Sales Representative']
+MaritalStatus_list = ['Married', 'Single']
+Gender_list = ['Female']
+Over_Time_list = ['Yes']
+Business_list = ['Travel_Rarely']
 
 
 
@@ -383,6 +396,38 @@ class PredictDiabet(views.APIView):
         return Response(instance.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+class PredictDSHremploye(views.APIView):
+    def post(self, request):
+        instance = DSHremployeSerializer(data=request.data)
+        if instance.is_valid():
+            data = instance.validated_data
+
+            new_department = data.pop('department')
+            new_education_field = data.pop('education_field')
+            new_job_role = data.pop('job_role')
+            new_marital_status = data.pop('marital_status')
+            new_gender = data.pop('gender')
+            new_over_time = data.pop('over_time')
+            new_business_travel = data.pop('business_travel')
+
+
+            department_1_0 = [1 if new_department == name else 0 for name in department_list]
+            education_field_1_0 = [1 if new_education_field == name else 0 for name in EducationField_list]
+            job_role_1_0 = [1 if new_job_role == name else 0 for name in JobRole_list]
+            marital_status_1_0 = [1 if new_marital_status == name else 0 for name in MaritalStatus_list]
+            gender_1_0 = [1 if new_gender == name else 0 for name in Gender_list]
+            over_time_1_0 = [1 if new_over_time == name else 0 for name in Over_Time_list]
+            business_travel_1_0 = [1 if new_business_travel == name else 0 for name in Business_list]
+
+            features = [list(data.values()) +business_travel_1_0+ department_1_0 + education_field_1_0 +gender_1_0 + job_role_1_0 + marital_status_1_0 + over_time_1_0 ]
+            scaler_data = scaler_staff.transform(features)
+            predict_staff = model_staff.predict(scaler_data)[0]
+            if predict_staff == 1:
+                predict_staff = 'Уйдет'
+            else:
+                predict_staff = 'Останется'
+            return Response({'Predict_staff': predict_staff}, status=status.HTTP_200_OK)
+        return Response(instance.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 

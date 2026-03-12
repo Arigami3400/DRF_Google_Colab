@@ -110,6 +110,40 @@ class Avacado(models.Model):
     weight_g = models.IntegerField()
     size_cm3 = models.IntegerField()
 
+from django.db import models
+
+class DSHremploye(models.Model):
+    age = models.IntegerField()
+    business_travel = models.CharField(max_length=50)
+    daily_rate = models.IntegerField()
+    department = models.CharField(max_length=50)
+    distance_from_home = models.IntegerField()
+    education = models.IntegerField()
+    education_field = models.CharField(max_length=50)
+    environment_satisfaction = models.IntegerField()
+    gender = models.CharField(max_length=10)
+    hourly_rate = models.IntegerField()
+    job_involvement = models.IntegerField()
+    job_level = models.IntegerField()
+    job_role = models.CharField(max_length=50)
+    job_satisfaction = models.IntegerField()
+    marital_status = models.CharField(max_length=50)
+    monthly_income = models.IntegerField()
+    monthly_rate = models.IntegerField()
+    num_companies_worked = models.IntegerField()
+    over_time = models.CharField(max_length=10)
+    percent_salary_hike = models.IntegerField()
+    performance_rating = models.IntegerField()
+    relationship_satisfaction = models.IntegerField()
+    stockoption_level = models.IntegerField()
+    total_working_years = models.IntegerField()
+    training_times_lastyear = models.IntegerField()
+    work_life_balance = models.IntegerField()
+    years_atcompany = models.IntegerField()
+    years_incurrent_role = models.IntegerField()
+    years_since_lastpromotion = models.IntegerField()
+    years_with_currmanager = models.IntegerField()
+
 
 
 
